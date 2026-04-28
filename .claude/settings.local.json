@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:documenter.getpostman.com)",
+      "WebFetch(domain:www.postman.com)",
+      "WebFetch(domain:local.adspower.net)",
+      "Bash(curl *)",
+      "Bash(mkdir -p /d/workspace/adspower/portal/server/routes /d/workspace/adspower/portal/server/services)",
+      "Bash(mkdir -p /d/workspace/adspower/portal/client/src/pages /d/workspace/adspower/portal/client/src/components /d/workspace/adspower/portal/client/src/api)",
+      "Bash(npm install *)",
+      "Bash(node_modules/.bin/vite build *)",
+      "Bash(npm run *)",
+      "Bash(pkill -f \"node.*index.js\")",
+      "Bash(pkill -f \"vite\")",
+      "Bash(node index.js)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /PID 13820 /F)",
+      "Bash(taskkill /PID 5884 /F)",
+      "Bash(taskkill /PID 61268 /F)",
+      "PowerShell(Start-Process -NoNewWindow -FilePath \"node\" -ArgumentList \"index.js\" -WorkingDirectory \"D:\\\\workspace\\\\adspower\\\\portal\\\\server\" -RedirectStandardOutput \"C:\\\\Temp\\\\server.log\" -RedirectStandardError \"C:\\\\Temp\\\\server_err.log\")",
+      "PowerShell(Invoke-RestMethod -Uri \"http://localhost:3001/health\")",
+      "PowerShell(\\(Invoke-WebRequest -Uri \"http://localhost:3001/api/scheduler/status\" -UseBasicParsing\\).Content)",
+      "PowerShell(netstat *)",
+      "Bash(git commit *)",
+      "Bash(git config *)",
+      "Bash(git add *)"
+    ]
+  }
+}
