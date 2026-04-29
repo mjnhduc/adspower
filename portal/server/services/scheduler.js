@@ -109,6 +109,11 @@ async function runCheck() {
 }
 
 function start() {
+  if (process.env.SCHEDULE_ENABLED === 'false') {
+    console.log('[Scheduler] Disabled via SCHEDULE_ENABLED=false — skipping.');
+    return;
+  }
+
   const interval = process.env.SCHEDULE_INTERVAL || '0 */6 * * *';
   if (schedulerTask) schedulerTask.stop();
 
@@ -130,6 +135,7 @@ function stop() {
 function getStatus() {
   return {
     running: !!schedulerTask,
+    enabled: process.env.SCHEDULE_ENABLED !== 'false',
     interval: process.env.SCHEDULE_INTERVAL || '0 */6 * * *',
     lastRun: lastRunResult,
     isRunning,

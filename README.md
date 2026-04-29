@@ -43,6 +43,20 @@ cp portal/server/.env.example portal/server/.env
 
 **3. Run**
 
+**Windows (one command):**
+```powershell
+# Allow scripts once if needed:
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+.\start.ps1
+```
+
+**Mac/Linux (one command):**
+```bash
+chmod +x start.sh && ./start.sh
+```
+
+**Manual:**
+
 Terminal 1 — Backend:
 ```bash
 cd portal/server && node index.js
@@ -50,7 +64,8 @@ cd portal/server && node index.js
 
 Terminal 2 — Frontend:
 ```bash
-cd portal/client && node_modules\.bin\vite.cmd
+cd portal/client && node_modules\.bin\vite.cmd   # Windows
+cd portal/client && npx vite                      # Mac/Linux
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
@@ -65,6 +80,7 @@ Open [http://localhost:3000](http://localhost:3000)
 | `TELEGRAM_BOT_TOKEN` | Telegram bot token |
 | `TELEGRAM_CHAT_ID` | Your Telegram chat ID |
 | `SCHEDULE_INTERVAL` | Cron expression (default: `0 */6 * * *`) |
+| `SCHEDULE_ENABLED` | Enable/disable cron job (`true` / `false`, default: `true`) |
 
 ## Proxy Pool Rules
 
